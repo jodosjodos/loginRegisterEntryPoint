@@ -1,0 +1,29 @@
+server:
+  port: 6000
+  error:
+    include-binding-errors: always
+    include-exception: true
+    include-message: always
+spring:
+  datasource:
+    username: jodosSpringboot
+    password: jodos2006
+    url:   jdbc:mysql://localhost:3306/userRegistration
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format-sql : true
+    show-sql: true
+  security:
+
+    user:
+      password: jodos2006
+      name: jodos
