@@ -28,7 +28,18 @@ public class SecurityConfig {
         XorCsrfTokenRequestAttributeHandler xor =
                 new XorCsrfTokenRequestAttributeHandler();
         http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(auth ->
-                auth.requestMatchers("/api/v1/user/**").permitAll()
+                auth
+                        .requestMatchers(
+                                "/api/v1/user/**",
+                                "/v2/api-docs",
+                                "/v3/api-docs",
+                                "/v3/api-docs/**",
+                                "/swagger-resources",
+                                "/swagger-resources/**",
+                                "/configuration/ui",
+                                "/swagger-ui/**",
+                                "/webjars/**",
+                                "/swagger-ui.html").permitAll()
                         .requestMatchers(HttpMethod.GET).permitAll()
                         .anyRequest()
                         .authenticated()

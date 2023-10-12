@@ -1,5 +1,4 @@
 server:
-  port: 6000
   error:
     include-binding-errors: always
     include-exception: true
